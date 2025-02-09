@@ -6,6 +6,17 @@ A modern Terminal User Interface (TUI) for generating SCP and RSYNC commands. Th
 ![Python Version](https://img.shields.io/badge/python-3.7%2B-blue)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 
+## Screenshots
+
+### SSH Connection
+![Login Screen](images/login.png)
+
+### File Browser
+![File Browser](images/file_browser.png)
+
+### Command Preview
+![Command Preview](images/command_preview.png)
+
 ## Features
 
 - 🖥️ Intuitive terminal-based user interface
