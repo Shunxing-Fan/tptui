@@ -19,7 +19,7 @@ def parse_ssh_string(ssh_input: str) -> dict:
     """Parse SSH connection string in various formats."""
     connection_info = {
         "host": "",
-        "port": "22",
+        "port": "22",  # Default port
         "username": "",
         "password": ""
     }
@@ -30,7 +30,7 @@ def parse_ssh_string(ssh_input: str) -> dict:
     
     if cmd_match:
         port, username, host = cmd_match.groups()
-        if port:
+        if port:  # Only update port if explicitly specified
             connection_info["port"] = port
         if username:
             connection_info["username"] = username
@@ -54,7 +54,7 @@ def parse_ssh_string(ssh_input: str) -> dict:
             key, value = key_value
             if key == 'HostName':
                 connection_info['host'] = value
-            elif key == 'Port':
+            elif key == 'Port':  # Only update port if explicitly specified
                 connection_info['port'] = value
             elif key == 'User':
                 connection_info['username'] = value
