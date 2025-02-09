@@ -56,9 +56,9 @@ python main.py
      ```
      Host myserver
      HostName example.com
-     Port 22
      User username
      ```
+     Note: Port specification is optional if using default port 22
    - Enter your password when prompted
 
 3. Navigate the interface:
