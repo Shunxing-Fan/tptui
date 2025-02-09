@@ -1,6 +1,6 @@
 # Teleport TUI (tptui)
 
-A modern Terminal User Interface (TUI) for seamless file transfers between local and remote systems. Teleport TUI provides an intuitive visual interface for SCP and RSYNC operations, making file transfers as simple as possible.
+A modern Terminal User Interface (TUI) for generating SCP and RSYNC commands. This tool helps you visually browse local and remote files, then generates the appropriate transfer commands which you can copy to your clipboard and execute in your terminal.
 
 ![Project Status](https://img.shields.io/badge/status-stable-green)
 ![Python Version](https://img.shields.io/badge/python-3.7%2B-blue)
@@ -10,17 +10,17 @@ A modern Terminal User Interface (TUI) for seamless file transfers between local
 
 - 🖥️ Intuitive terminal-based user interface
 - 📂 Visual file browser for both local and remote systems
-- 🔄 Support for both SCP and RSYNC protocols
-- 📋 Command preview and clipboard copy functionality
+- 🔄 Support for both SCP and RSYNC command generation
+- 📋 Command preview with clipboard integration
 - 🔀 Easy switching between transfer directions (local→remote, remote→local)
-- ⏸️ Resume support for interrupted transfers (with RSYNC)
-- 🔒 Secure password handling
+- ⏸️ Support for generating resumable transfer commands (with RSYNC)
+- 🔒 Secure password handling for SSH connections
 
 ## Installation
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/tptui.git
+git clone https://github.com/Shunxing-Fan/tptui.git
 cd tptui
 ```
 
@@ -54,16 +54,17 @@ python main.py
    - Use arrow keys to browse files
    - Press `Tab` to switch between local and remote panels
    - Press `Enter` to select files/directories
-   - Press `T` to open transfer options
+   - Press `T` to open command preview
    - Press `C` to clear selection
    - Press `Q` to quit
 
-4. Transfer files:
+4. Generate and use transfer commands:
    - Select source and destination files/directories
-   - Choose between SCP and RSYNC protocols
+   - Choose between SCP and RSYNC command types
    - Set transfer direction (local→remote or remote→local)
-   - Copy the generated command to clipboard
-   - Execute the command in your terminal
+   - Preview the generated command
+   - Copy the command to your clipboard
+   - Paste and execute the command in your terminal
 
 ## Keyboard Shortcuts
 
@@ -71,7 +72,7 @@ python main.py
 |-------|---------------------------|
 | Tab   | Switch between panels     |
 | Enter | Select file/directory     |
-| T     | Open transfer options     |
+| T     | Open command preview      |
 | C     | Clear current selection   |
 | Q     | Quit                     |
 
