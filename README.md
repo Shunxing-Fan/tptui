@@ -1,38 +1,22 @@
-# Teleport TUI (tptui)
+# Teleport TUI
 
-A modern Terminal User Interface (TUI) for generating SCP and RSYNC commands. This tool helps you visually browse local and remote files, then generates the appropriate transfer commands which you can copy to your clipboard and execute in your terminal.
-
-![Project Status](https://img.shields.io/badge/status-stable-green)
-![Python Version](https://img.shields.io/badge/python-3.7%2B-blue)
-![License](https://img.shields.io/badge/license-MIT-blue)
-
-## Screenshots
-
-### SSH Connection
-![Login Screen](images/login.png)
-
-### File Browser
-![File Browser](images/file_browser.png)
-
-### Command Preview
-![Command Preview](images/command_preview.png)
+A Terminal User Interface (TUI) application for secure file transfer between local and remote systems using SSH. The application supports both SCP and RSYNC protocols with an intuitive interface for file selection and command generation.
 
 ## Features
 
-- 🖥️ Intuitive terminal-based user interface
-- 📂 Visual file browser for both local and remote systems
-- 🔄 Support for both SCP and RSYNC command generation
-- 📋 Command preview with clipboard integration
-- 🔀 Easy switching between transfer directions (local→remote, remote→local)
-- ⏸️ Support for generating resumable transfer commands (with RSYNC)
-- 🔒 Secure password handling for SSH connections
+- Interactive file browser for both local and remote systems
+- Support for both SCP and RSYNC protocols
+- Command preview and clipboard integration
+- Breakpoint continuation support for interrupted transfers
+- Easy direction switching between local-to-remote and remote-to-local transfers
+- Support for SSH connection strings and config formats
 
 ## Installation
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/Shunxing-Fan/tptui.git
-cd tptui
+git clone https://github.com/yourusername/scp_tui.git
+cd scp_tui
 ```
 
 2. Install dependencies:
@@ -40,60 +24,54 @@ cd tptui
 pip install -r requirements.txt
 ```
 
-## Usage
-
-1. Start the application:
+3. Run the packaged application:
 ```bash
-python main.py
+tptui
 ```
 
-2. Connect to your remote server:
-   - Enter your SSH connection details in either format:
-     ```
-     ssh -p PORT USERNAME@HOSTNAME
-     ```
-     or
+## Usage
+
+1. Launch the application by typing `tptui` in any terminal window.
+
+2. Enter your SSH connection details in either format:
+   - SSH command format: `ssh -p PORT USERNAME@HOSTNAME`
+   - SSH config format:
      ```
      Host myserver
      HostName example.com
+     Port 22
      User username
      ```
-     Note: Port specification is optional if using default port 22
-   - Enter your password when prompted
 
-3. Navigate the interface:
-   - Use arrow keys to browse files
-   - Press `Tab` to switch between local and remote panels
-   - Press `Enter` to select files/directories
-   - Press `T` to open command preview
-   - Press `C` to clear selection
-   - Press `Q` to quit
+3. Enter your password when prompted.
 
-4. Generate and use transfer commands:
-   - Select source and destination files/directories
-   - Choose between SCP and RSYNC command types
-   - Set transfer direction (local→remote or remote→local)
-   - Preview the generated command
-   - Copy the command to your clipboard
-   - Paste and execute the command in your terminal
+4. Use the file browser to select source and destination files:
+   - Press `Tab` to switch focus between local and remote file trees
+   - Navigate using arrow keys
+   - Press `Enter` to select a file or expand/collapse directories
+   - Press `t` to preview the transfer command
+   - Press `c` to clear selection
+
+5. In the command preview screen:
+   - Switch between SCP and RSYNC protocols
+   - Toggle transfer direction (local-to-remote or remote-to-local)
+   - Copy the generated command to clipboard
+   - Edit the command if needed
+
+6. Execute the copied command in your terminal to start the transfer.
 
 ## Keyboard Shortcuts
 
-| Key   | Action                    |
-|-------|---------------------------|
-| Tab   | Switch between panels     |
-| Enter | Select file/directory     |
-| T     | Open command preview      |
-| C     | Clear current selection   |
-| Q     | Quit                     |
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
+- `Tab`: Switch focus between local and remote file trees
+- `t`: Open transfer command preview
+- `c`: Clear current selection
+- `q`: Quit current screen
+- Arrow keys: Navigate file trees
+- `Enter`: Select file or expand/collapse directory
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Acknowledgments
 
